@@ -1,89 +1,91 @@
+------------------BirkaÃ§ sorguda inner join kullanmÄ±ÅŸtÄ±m, sonrasÄ±nda deÄŸiÅŸtirmedim.------------------------------
+
 --4 S
-select * from order_ıtems
-where unıt_prıce >= 150 
-order by unıt_prıce ASC;
+select * from order_Ã½tems
+where unÃ½t_prÃ½ce >= 150 
+order by unÃ½t_prÃ½ce ASC;
 
 --5 S
-select hıre_date, fırst_name, last_name, employee_ıd FROM employees
-where hıre_date between '01/05/2016' and '31/05/2016'
-order by hıre_date;
+select hÃ½re_date, fÃ½rst_name, last_name, employee_Ã½d FROM employees
+where hÃ½re_date between '01/05/2016' and '31/05/2016'
+order by hÃ½re_date;
 
 --6 S
-select contact_ıd, fırst_name, last_name from contacts
-where fırst_name = 'Charlie' or fırst_name = 'Charlsie' ;
+select contact_Ã½d, fÃ½rst_name, last_name from contacts
+where fÃ½rst_name = 'Charlie' or fÃ½rst_name = 'Charlsie' ;
 
 --8 S
-SELECT products.product_ıd, products.product_name, products.descrıptıon, ınventorıes.quantıty
+SELECT products.product_Ã½d, products.product_name, products.descrÃ½ptÃ½on, Ã½nventorÃ½es.quantÃ½ty
 FROM products 
-ınner joın ınventorıes on
-     products.product_ıd = ınventorıes.product_ıd
+Ã½nner joÃ½n Ã½nventorÃ½es on
+     products.product_Ã½d = Ã½nventorÃ½es.product_Ã½d
 where quantity between 10 and 50
-order by ınventorıes.quantıty asc;
+order by Ã½nventorÃ½es.quantÃ½ty asc;
 
 --10 S 
-SELECT * FROM order_ıtems
-where unıt_prıce > 100
-order by unıt_prıce;
+SELECT * FROM order_Ã½tems
+where unÃ½t_prÃ½ce > 100
+order by unÃ½t_prÃ½ce;
 
 --14 S
-SELECT employee_ıd, fırst_name, last_name, job_tıtle FROM employees
-WHERE manager_ıd IS NULL;
+SELECT employee_Ã½d, fÃ½rst_name, last_name, job_tÃ½tle FROM employees
+WHERE manager_Ã½d IS NULL;
 
 --15 S
-SELECT locatıon_ıd, cıty, address, postal_code FROM locatıons
+SELECT locatÃ½on_Ã½d, cÃ½ty, address, postal_code FROM locatÃ½ons
 WHERE state IS NULL;
 
 --18 S
 SELECT * FROM ORDERS 
-WHERE STATUS = 'Canceled' AND salesman_ıd IS NULL;
+WHERE STATUS = 'Canceled' AND salesman_Ã½d IS NULL;
 
---20 S HAZİRAN DAHİL Mİ?
+--20 S HAZÃRAN DAHÃL MÃ?
 SELECT * FROM ORDERS
 WHERE order_date BETWEEN '01/01/2016' AND '30/06/2016' 
 ORDER BY order_date ASC;
 
 --25 S
-SELECT employee_ıd, fırst_name, last_name, job_tıtle FROM employees
-WHERE job_tıtle LIKE 'S%'
-ORDER BY job_tıtle;
+SELECT employee_Ã½d, fÃ½rst_name, last_name, job_tÃ½tle FROM employees
+WHERE job_tÃ½tle LIKE 'S%'
+ORDER BY job_tÃ½tle;
 
 --26 S
-SELECT products.product_ıd, products.product_name, products.descrıptıon, products.standard_cost, products.lıst_prıce, product_categorıes.category_name FROM products INNER JOIN product_categorıes ON 
-      products.category_ıd = product_categorıes.category_ıd
+SELECT products.product_Ã½d, products.product_name, products.descrÃ½ptÃ½on, products.standard_cost, products.lÃ½st_prÃ½ce, product_categorÃ½es.category_name FROM products INNER JOIN product_categorÃ½es ON 
+      products.category_Ã½d = product_categorÃ½es.category_Ã½d
 WHERE products.product_name LIKE 'Intel Xeon%' 
-ORDER BY products.product_ıd;
+ORDER BY products.product_Ã½d;
 
 --28 S
-SELECT contact_ıd, fırst_name, last_name, phone FROM contacts
-WHERE fırst_name LIKE 'C%'
+SELECT contact_Ã½d, fÃ½rst_name, last_name, phone FROM contacts
+WHERE fÃ½rst_name LIKE 'C%'
 ORDER BY last_name ASC;
 
 --29 S 
 SELECT * FROM PRODUCTS 
-WHERE product_name LIKE 'Asus%' AND lıst_prıce < standard_cost;
+WHERE product_name LIKE 'Asus%' AND lÃ½st_prÃ½ce < standard_cost;
 
 --31 S 
-SELECT * FROM product_categorıes 
-WHERE product_categorıes.category_ıd <> 3;
+SELECT * FROM product_categorÃ½es 
+WHERE product_categorÃ½es.category_Ã½d <> 3;
 
 --33 S
-SELECT customers.customer_ıd, customers.name, customers.address, customers.websıte, customers.credıt_lımıt, orders.status FROM customers INNER JOIN orders ON
-       orders.customer_ıd = customers.customer_ıd
+SELECT customers.customer_Ã½d, customers.name, customers.address, customers.websÃ½te, customers.credÃ½t_lÃ½mÃ½t, orders.status FROM customers INNER JOIN orders ON
+       orders.customer_Ã½d = customers.customer_Ã½d
 WHERE orders.status <> 'Shipped';
 
 --34 S
-SELECT products.product_ıd, products.product_name, products.descrıptıon, products.standard_cost, products.lıst_prıce, products.category_ıd, ınventorıes.quantıty FROM products INNER JOIN ınventorıes ON 
-       products.product_ıd = ınventorıes.product_ıd
-WHERE ınventorıes.quantıty = 100
-ORDER BY products.product_ıd;
+SELECT products.product_Ã½d, products.product_name, products.descrÃ½ptÃ½on, products.standard_cost, products.lÃ½st_prÃ½ce, products.category_Ã½d, Ã½nventorÃ½es.quantÃ½ty FROM products INNER JOIN Ã½nventorÃ½es ON 
+       products.product_Ã½d = Ã½nventorÃ½es.product_Ã½d
+WHERE Ã½nventorÃ½es.quantÃ½ty = 100
+ORDER BY products.product_Ã½d;
 
 --37 S
 SELECT COUNT(PRODUCT_ID) FROM INVENTORIES
-WHERE warehouse_ıd = 8;
+WHERE warehouse_Ã½d = 8;
 
 --39 S
 SELECT COUNT(PRODUCT_ID) FROM PRODUCTS
-WHERE lıst_prıce BETWEEN 1000 AND 3000;
+WHERE lÃ½st_prÃ½ce BETWEEN 1000 AND 3000;
 
 
 
