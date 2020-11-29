@@ -74,10 +74,10 @@ SELECT customers.customer_ýd, customers.name, customers.address, customers.webs
 WHERE orders.status <> 'Shipped';
 
 --34 S
-SELECT products.product_ýd, products.product_name, products.descrýptýon, products.standard_cost, products.lýst_prýce, products.category_ýd, ýnventorýes.quantýty FROM products INNER JOIN ýnventorýes ON 
-       products.product_ýd = ýnventorýes.product_ýd
-WHERE ýnventorýes.quantýty = 100
-ORDER BY products.product_ýd;
+SELECT products.*, ınventorıes.quantıty FROM products INNER JOIN ınventorıes ON 
+       products.product_ıd = ınventorıes.product_ıd
+WHERE ınventorıes.quantıty = 100
+ORDER BY products.product_ıd;
 
 --37 S
 SELECT COUNT(PRODUCT_ID) FROM INVENTORIES
