@@ -50,10 +50,10 @@ WHERE job_týtle LIKE 'S%'
 ORDER BY job_týtle;
 
 --26 S
-SELECT products.product_ýd, products.product_name, products.descrýptýon, products.standard_cost, products.lýst_prýce, product_categorýes.category_name FROM products INNER JOIN product_categorýes ON 
-      products.category_ýd = product_categorýes.category_ýd
+SELECT products.*, product_categorıes.category_name FROM products INNER JOIN product_categorıes ON 
+      products.category_ıd = product_categorıes.category_ıd
 WHERE products.product_name LIKE 'Intel Xeon%' 
-ORDER BY products.product_ýd;
+ORDER BY products.product_ıd;
 
 --28 S
 SELECT contact_ýd, fýrst_name, last_name, phone FROM contacts
@@ -69,8 +69,8 @@ SELECT * FROM product_categorýes
 WHERE product_categorýes.category_ýd <> 3;
 
 --33 S
-SELECT customers.customer_ýd, customers.name, customers.address, customers.websýte, customers.credýt_lýmýt, orders.status FROM customers INNER JOIN orders ON
-       orders.customer_ýd = customers.customer_ýd
+SELECT customers.*, orders.status FROM customers INNER JOIN orders ON
+       orders.customer_ıd = customers.customer_ıd
 WHERE orders.status <> 'Shipped';
 
 --34 S
